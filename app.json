@@ -1,0 +1,7 @@
+{
+    "pages": [
+        "pages/cal/cal",
+        "pages/index/index",
+        "pages/logs/logs"
+    ]
+}
