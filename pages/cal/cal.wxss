@@ -12,8 +12,10 @@ page{
     padding: 50rpx 30rpx 0;
 }
 .screen{
-    font-size: 160rpx;
+    width: 690rpx;
+    font-size: 120rpx;
     text-align: right;
+    overflow: hidden;
 }
 
 .btn-group{
