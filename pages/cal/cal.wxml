@@ -1,0 +1,37 @@
+<!--pages/cal/cal.wxml-->
+
+<view class='container'>
+    <view class='screen-container'>
+        <view class='screen'>10</view>
+    </view>
+    <view class='btn-group'>
+        <view class='btn'>AC</view>
+        <view class='btn'>C</view>
+        <view class='btn'>±</view>
+        <view class='btn'>÷</view>
+    </view>
+    <view class='btn-group'>
+        <view class='btn'>9</view>
+        <view class='btn'>8</view>
+        <view class='btn'>7</view>
+        <view class='btn'>x</view>
+    </view>
+    <view class='btn-group'>
+        <view class='btn'>6</view>
+        <view class='btn'>5</view>
+        <view class='btn'>4</view>
+        <view class='btn'>-</view>
+    </view>
+    <view class='btn-group'>
+        <view class='btn'>3</view>
+        <view class='btn'>2</view>
+        <view class='btn'>1</view>
+        <view class='btn'>+</view>
+    </view>
+    <view class='btn-group'>
+        <view class='btn'>历史</view>
+        <view class='btn'>0</view>
+        <view class='btn'>.</view>
+        <view class='btn'>=</view>
+    </view>
+</view>
