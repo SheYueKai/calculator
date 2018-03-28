@@ -5,31 +5,31 @@
         <view class='screen'>{{screenData}}</view>
     </view>
     <view class='btn-group'>
-        <view class='btn' bindtap='clickButton' id='{{id_all_clear}}'>AC</view>
+        <view class='btn' bindtap='clickButton' id='{{id_back}}'>B</view>
         <view class='btn' bindtap='clickButton' id='{{id_clear}}'>C</view>
-        <view class='btn' bindtap='clickButton' id='{{id_negative}}'>±</view>
+        <view class='btn' bindtap='clickButton' id='{{id_history}}'>H</view>
         <view class='btn' bindtap='clickButton' id='{{id_divide}}'>÷</view>
     </view>
     <view class='btn-group'>
-        <view class='btn' bindtap='clickButton' id='{{id_9}}'>9</view>
-        <view class='btn' bindtap='clickButton' id='{{id_8}}'>8</view>
         <view class='btn' bindtap='clickButton' id='{{id_7}}'>7</view>
+        <view class='btn' bindtap='clickButton' id='{{id_8}}'>8</view>
+        <view class='btn' bindtap='clickButton' id='{{id_9}}'>9</view>
         <view class='btn' bindtap='clickButton' id='{{id_multiply}}'>x</view>
     </view>
     <view class='btn-group'>
-        <view class='btn' bindtap='clickButton' id='{{id_6}}'>6</view>
-        <view class='btn' bindtap='clickButton' id='{{id_5}}'>5</view>
         <view class='btn' bindtap='clickButton' id='{{id_4}}'>4</view>
+        <view class='btn' bindtap='clickButton' id='{{id_5}}'>5</view>
+        <view class='btn' bindtap='clickButton' id='{{id_6}}'>6</view>
         <view class='btn' bindtap='clickButton' id='{{id_minus}}'>-</view>
     </view>
     <view class='btn-group'>
-        <view class='btn' bindtap='clickButton' id='{{id_3}}'>3</view>
-        <view class='btn' bindtap='clickButton' id='{{id_2}}'>2</view>
         <view class='btn' bindtap='clickButton' id='{{id_1}}'>1</view>
+        <view class='btn' bindtap='clickButton' id='{{id_2}}'>2</view>
+        <view class='btn' bindtap='clickButton' id='{{id_3}}'>3</view>
         <view class='btn' bindtap='clickButton' id='{{id_plus}}'>+</view>
     </view>
     <view class='btn-group'>
-        <view class='btn' bindtap='clickButton' id='{{id_history}}'>历史</view>
+        <view class='btn' bindtap='clickButton' id='{{id_negative}}'>±</view>
         <view class='btn' bindtap='clickButton' id='{{id_0}}'>0</view>
         <view class='btn' bindtap='clickButton' id='{{id_point}}'>.</view>
         <view class='btn' bindtap='clickButton' id='{{id_equal}}'>=</view>

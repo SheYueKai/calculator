@@ -23,40 +23,68 @@ Page({
         id_divide: '÷',
         id_negative: 'negative',
         id_clear: 'clear',
-        id_all_clear: 'all_clear',
+        id_back: 'back',
         id_history: 'history',
-        screenData: "0"
+        screenData: '0',
+        lastResult: '0',
+        lastOperator: '',
+        lastIsOperator: false
     },
 
     clickButton: function (event) {
-        var data = this.data;
+        var data = this.data;//页面初始数据
+        var id = event.target.id;//当前点击按钮id
+        // console.log("id = " + id);
 
-        var result = this.data.screenData;
-        var id = event.target.id;
-        // console.log(result);
-        // console.log(id);
+        var result = data.screenData;//当前计算结果
+        var lastResult = data.lastResult;//上一个计算结果
+        var lastOperator = data.lastOperator;//上一个计算操作符
+        var lastIsOperator = data.lastIsOperator;//上一个计算操作符
 
-        switch(id){
-            case data.id_clear:
-                result = 0;
-                break;
+        if (id == data.id_clear){//清空
+            result = 0;
+            lastResult = 0;
+            lastOperator = '';
+            lastIsOperator= false;
 
-            case data.id_plus:
-                if(result == 0){
-                    break;
-                }
+        } else if (id == data.id_negative){//正负
+            result = -result;
 
-            default:
-                if (result == 0) {
-                    result = id;
-                } else {
-                    result += id;
-                }
+        } else if (id == data.id_plus){//加法
+            lastOperator = id;//操作符
+            lastIsOperator = true;//最后输入的值是操作符
+            lastResult = result;
+
+        } else if (id == data.id_equal) {//等于
+            if (lastOperator == data.id_plus){
+                result = parseFloat(result) + parseFloat(lastResult);
+                lastResult = result;
+            }
+            lastIsOperator = true;
+
+        } else if (id == 1){//数字
+            if ((result == 0) || lastIsOperator){
+                result = id;
+                lastIsOperator = false;
+            }else{
+                result += id;
+            }
         }
 
         this.setData({
+            lastResult: lastResult,
+            lastOperator: lastOperator,
+            lastIsOperator: lastIsOperator
+        });
+
+        this.setData({//数据更新到视图
             screenData: result
-        })
+        });
+
+        console.log("result = " + result);
+        console.log("lastResult = " + lastResult);
+        console.log("lastOperator = " + lastOperator);
+        console.log("lastIsOperator = " + lastIsOperator);
     }
 
 })
