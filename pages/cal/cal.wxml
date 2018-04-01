@@ -2,7 +2,7 @@
 
 <view class='container'>
     <view class='screen-container'>
-        <view class='screen'>{{screenData}}</view>
+        <view class='{{screenData.length > 14 ? "screen largest" : (screenData.length > 9 ? "screen larger" : "screen")}}'>{{screenData}}</view>
     </view>
     <view class='btn-group'>
         <view class='btn' bindtap='clickButton' id='{{id_back}}'>B</view>

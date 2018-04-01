@@ -9,14 +9,21 @@ page{
 }
 
 .screen-container{
+    box-sizing: border-box;
+    width: 750rpx;
+    height: 260rpx;
     padding: 50rpx 30rpx 0;
 }
 .screen{
-    width: 690rpx;
-    height: 160rpx;
-    font-size: 120rpx;
+    font-size: 124rpx;
     text-align: right;
     overflow: hidden;
+}
+.larger{
+    font-size: 80rpx;
+}
+.largest{
+    font-size: 52rpx;
 }
 
 .btn-group{

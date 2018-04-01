@@ -47,27 +47,45 @@ Page({
             lastOperator = '';
             lastIsOperator= false;
 
-        } else if (id == data.id_negative){//正负
+        }
+        if (id == data.id_negative){//正负
             result = -result;
 
-        } else if (id == data.id_plus){//加法
+        }
+        if (/^(\+|-|x|÷)$/.test(id)) {//加减乘除
             lastOperator = id;//操作符
             lastIsOperator = true;//最后输入的值是操作符
             lastResult = result;
 
-        } else if (id == data.id_equal) {//等于
-            if (lastOperator == data.id_plus){
-                result = parseFloat(result) + parseFloat(lastResult);
+        }
+        if (id == data.id_equal) {//等于
+            if (lastOperator == data.id_plus){//加法
+                result = parseFloat(lastResult) + parseFloat(result);
+            }
+            if (lastOperator == data.id_minus) {//减法
+                result = parseFloat(lastResult) - parseFloat(result);
+            }
+            if (lastOperator == data.id_multiply) {//乘法
+                result = parseFloat(lastResult) * parseFloat(result);
+            }
+            if (lastOperator == data.id_divide) {//除法
+                result = parseFloat(lastResult) / parseFloat(result);
+            }
+            if (/^(\+|-|x|÷)$/.test(lastOperator)){
+                result = result.toString();
                 lastResult = result;
             }
+
             lastIsOperator = true;
 
-        } else if (id == 1){//数字
+        }
+        if (/^\d$/.test(id)) {//数字
             if ((result == 0) || lastIsOperator){
                 result = id;
                 lastIsOperator = false;
             }else{
                 result += id;
+                result = parseFloat(result).toString();
             }
         }
 
@@ -82,9 +100,12 @@ Page({
         });
 
         console.log("result = " + result);
+        console.log("typeof(result) = " + typeof(result));
+        console.log("result.length = " + result.length);
         console.log("lastResult = " + lastResult);
         console.log("lastOperator = " + lastOperator);
         console.log("lastIsOperator = " + lastIsOperator);
+        
     }
 
 })
